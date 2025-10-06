@@ -1,37 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-
-import logo from './assets/logohy.png'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { CartProvider } from "./context/CartContext";
+import Header from "./components/Header";
+import Footer from "./footer";
+import Home from "./pages/Home";
+import Catalog from "./pages/Catalog";
+import GameDetail from "./pages/GameDetail";
+import Cart from "./pages/Cart";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <div>
-
-      <h1>HAKEY</h1>
-    </div>
-      <div>
-      <a href="" target="_blank">
-          <img src={logo} className="logo" alt=" Logo Hakey" />
-      </a>
-      </div>
-      <h1>Las Mejores keys</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <CartProvider>
+      <Router>
+        <div className="app">
+          <Header />
+          <main className="main-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/catalog" element={<Catalog />} />
+              <Route path="/game/:id" element={<GameDetail />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route
+                path="/about"
+                element={
+                  <div
+                    className="container"
+                    style={{ padding: "4rem 2rem", textAlign: "center" }}
+                  >
+                    <h1>Acerca de HAKEY</h1>
+                    <p>Tu tienda de confianza para game keys</p>
+                  </div>
+                }
+              />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </Router>
+    </CartProvider>
+  );
 }
 
-export default App
+export default App;
