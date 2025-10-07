@@ -4,6 +4,7 @@ import { FiArrowRight, FiTrendingUp } from "react-icons/fi";
 import GameCard from "../components/GameCard";
 import Loading from "../components/Loading";
 import ErrorMessage from "../components/ErrorMessage";
+import TextType from "../components/TextType";
 import { useGames } from "../hooks/useGames";
 import "./Home.css";
 
@@ -25,8 +26,17 @@ const Home = () => {
         <div className="container">
           <div className="hero-content fade-in">
             <h1 className="hero-title">
-              Descubre las Mejores
-              <span className="gradient-text"> Game Keys</span>
+              Descubre las Mejores{" "}
+              <TextType
+                text={["Game Keys", "Ofertas", "Aventuras"]}
+                as="span"
+                className="gradient-text"
+                typingSpeed={80}
+                deletingSpeed={50}
+                pauseDuration={2000}
+                cursorCharacter="|"
+                loop={true}
+              />
             </h1>
             <p className="hero-subtitle">
               Miles de juegos a los mejores precios. Activación instantánea. Tu

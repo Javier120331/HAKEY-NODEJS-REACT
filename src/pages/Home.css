@@ -61,9 +61,27 @@
   line-height: 1.2;
   margin-bottom: 1.5rem;
   color: var(--text-light);
+  min-height: 4.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
 .gradient-text {
+  background: linear-gradient(
+    135deg,
+    var(--primary-purple),
+    var(--accent-purple)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.gradient-text .text-type__cursor {
   background: linear-gradient(
     135deg,
     var(--primary-purple),
