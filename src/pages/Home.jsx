@@ -26,7 +26,8 @@ const Home = () => {
         <div className="container">
           <div className="hero-content fade-in">
             <h1 className="hero-title">
-              Descubre las Mejores{" "}
+              Descubre las Mejores
+              <br />
               <TextType
                 text={["Game Keys", "Ofertas", "Aventuras"]}
                 as="span"
