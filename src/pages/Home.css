@@ -2,6 +2,10 @@
   flex: 1;
 }
 
+.home a {
+  text-decoration: none;
+}
+
 /* Hero Section */
 .hero {
   background: linear-gradient(

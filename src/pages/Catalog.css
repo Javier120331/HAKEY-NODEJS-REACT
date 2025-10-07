@@ -3,6 +3,10 @@
   padding: 3rem 0;
 }
 
+.catalog a {
+  text-decoration: none;
+}
+
 .catalog-header {
   text-align: center;
   margin-bottom: 3rem;

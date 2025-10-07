@@ -4,6 +4,10 @@
   min-height: 70vh;
 }
 
+.cart a {
+  text-decoration: none;
+}
+
 /* Empty Cart */
 .empty-cart {
   display: flex;

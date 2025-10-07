@@ -3,6 +3,10 @@
   padding: 2rem 0 4rem;
 }
 
+.game-detail a {
+  text-decoration: none;
+}
+
 .back-button {
   display: flex;
   align-items: center;
