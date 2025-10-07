@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import { FiArrowRight, FiTrendingUp } from "react-icons/fi";
 import GameCard from "../components/GameCard";
 import Loading from "../components/Loading";
@@ -11,6 +12,11 @@ const Home = () => {
 
   const featuredGames = games.filter((game) => game.featured);
   const topDeals = games.filter((game) => game.discount > 20).slice(0, 4);
+
+  // Scroll al inicio cuando se monta el componente
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   return (
     <div className="home">
