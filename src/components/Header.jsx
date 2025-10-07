@@ -1,14 +1,21 @@
 import { Link } from "react-router-dom";
-import { FiShoppingCart, FiMenu, FiX } from "react-icons/fi";
+import { FiShoppingCart, FiMenu, FiX, FiUser, FiLogOut } from "react-icons/fi";
 import { useState } from "react";
 import { useCart } from "../context/CartContext";
+import { useAuth } from "../context/AuthContext";
 import "./Header.css";
 import logo from "../assets/logohy.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { getCartItemsCount } = useCart();
+  const { user, isAuthenticated, logout } = useAuth();
   const itemsCount = getCartItemsCount();
+
+  const handleLogout = () => {
+    logout();
+    setMenuOpen(false);
+  };
 
   return (
     <header className="header">
@@ -32,6 +39,39 @@ const Header = () => {
           </nav>
 
           <div className="header-actions">
+            {isAuthenticated ? (
+              <>
+                <div className="user-menu">
+                  <FiUser size={20} />
+                  <span className="user-name">{user?.name || user?.email}</span>
+                  <button
+                    onClick={handleLogout}
+                    className="logout-button"
+                    title="Cerrar sesión"
+                  >
+                    <FiLogOut size={20} />
+                  </button>
+                </div>
+              </>
+            ) : (
+              <div className="auth-buttons">
+                <Link
+                  to="/login"
+                  className="login-link"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Iniciar sesión
+                </Link>
+                <Link
+                  to="/register"
+                  className="register-link"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Registrarse
+                </Link>
+              </div>
+            )}
+
             <Link to="/cart" className="cart-button">
               <FiShoppingCart size={24} />
               {itemsCount > 0 && (
