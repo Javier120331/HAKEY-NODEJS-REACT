@@ -24,7 +24,7 @@
   height: 600px;
   background: radial-gradient(
     circle,
-    rgba(124, 58, 237, 0.3) 0%,
+    rgba(112, 0, 163, 0.3) 0%,
     transparent 70%
   );
   border-radius: 50%;
@@ -192,7 +192,7 @@
 .feature-card:hover {
   border-color: var(--primary-purple);
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 10px 30px rgba(112, 0, 163, 0.3);
 }
 
 .feature-icon {

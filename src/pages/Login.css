@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #7000a3 0%, #7f00b2 100%);
 }
 
 .login-card {
@@ -77,8 +77,8 @@
 }
 
 .form-group input:focus {
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #7000a3;
+  box-shadow: 0 0 0 3px rgba(112, 0, 163, 0.1);
 }
 
 .form-group input.input-error {
@@ -111,7 +111,7 @@
 }
 
 .btn-submit {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #7000a3 0%, #7f00b2 100%);
   color: white;
   border: none;
   padding: 1rem;
@@ -125,7 +125,7 @@
 
 .btn-submit:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 5px 20px rgba(112, 0, 163, 0.4);
 }
 
 .btn-submit:active:not(:disabled) {
@@ -150,14 +150,14 @@
 }
 
 .link {
-  color: #667eea;
+  color: #7000a3;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .link:hover {
-  color: #764ba2;
+  color: #992acb;
   text-decoration: underline;
 }
 

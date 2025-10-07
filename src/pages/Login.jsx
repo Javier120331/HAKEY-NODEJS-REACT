@@ -110,13 +110,17 @@ const Login = () => {
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       // Aquí iría tu lógica de autenticación real
+      // Por ahora, si el email es admin@hakey.com, será administrador
+      const isAdmin = formData.email.toLowerCase() === "admin@hakey.com";
+
       login({
         email: formData.email,
         name: formData.email.split("@")[0],
+        isAdmin: isAdmin,
       });
 
-      // Redirigir al home o dashboard
-      navigate("/");
+      // Redirigir al home o dashboard (admin va al panel)
+      navigate(isAdmin ? "/admin" : "/");
     } catch (error) {
       setErrors({
         submit: "Error al iniciar sesión. Por favor, intenta nuevamente.",

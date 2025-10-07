@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
-import { FiShoppingCart, FiMenu, FiX, FiUser, FiLogOut } from "react-icons/fi";
+import {
+  FiShoppingCart,
+  FiMenu,
+  FiX,
+  FiUser,
+  FiLogOut,
+  FiSettings,
+} from "react-icons/fi";
 import { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
@@ -33,6 +40,15 @@ const Header = () => {
             <Link to="/catalog" onClick={() => setMenuOpen(false)}>
               Catálogo
             </Link>
+            {user?.isAdmin && (
+              <Link
+                to="/admin"
+                onClick={() => setMenuOpen(false)}
+                className="admin-nav-link"
+              >
+                Panel Admin
+              </Link>
+            )}
             <Link to="/about" onClick={() => setMenuOpen(false)}>
               Acerca de
             </Link>
@@ -44,6 +60,16 @@ const Header = () => {
                 <div className="user-menu">
                   <FiUser size={20} />
                   <span className="user-name">{user?.name || user?.email}</span>
+                  {user?.isAdmin && (
+                    <Link
+                      to="/admin"
+                      className="admin-icon-link"
+                      title="Panel de Administrador"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      <FiSettings size={20} />
+                    </Link>
+                  )}
                   <button
                     onClick={handleLogout}
                     className="logout-button"

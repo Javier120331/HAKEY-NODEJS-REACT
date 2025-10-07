@@ -1,16 +1,18 @@
 :root {
-  /* Paleta de colores morada */
-  --primary-purple: #7c3aed;
-  --primary-dark: #5b21b6;
-  --primary-light: #a78bfa;
-  --secondary-purple: #8b5cf6;
-  --accent-purple: #c4b5fd;
+  /* Nueva paleta de colores morada y verde */
+  --primary-purple: #7000a3;
+  --primary-dark: #5a0084;
+  --primary-light: #992acb;
+  --secondary-purple: #7f00b2;
+  --accent-purple: #992acb;
+  --primary-green: #23a800;
+  --secondary-green: #53cb2a;
   --dark-bg: #1a0b2e;
   --darker-bg: #0f0920;
   --card-bg: #2d1b4e;
   --text-light: #f3f4f6;
   --text-gray: #d1d5db;
-  --success: #10b981;
+  --success: #23a800;
   --warning: #f59e0b;
   --danger: #ef4444;
 }
@@ -67,12 +69,12 @@ body {
   cursor: pointer;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 15px rgba(112, 0, 163, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+  box-shadow: 0 6px 20px rgba(112, 0, 163, 0.5);
 }
 
 .btn-secondary {
