@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { FiSearch, FiFilter } from "react-icons/fi";
 import GameCard from "../components/GameCard";
 import Loading from "../components/Loading";
@@ -22,6 +22,11 @@ const Catalog = () => {
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [searchTerm, setSearchTerm] = useState("");
   const [sortBy, setSortBy] = useState("featured");
+
+  // Scroll al inicio cuando se monta el componente
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   // Obtener categorías dinámicamente
   const categories = useMemo(() => getCategories(games), [games]);

@@ -158,7 +158,7 @@
 
 .link:hover {
   color: #992acb;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Responsive */

@@ -17,6 +17,8 @@ export const CartProvider = ({ children }) => {
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
+  const [notification, setNotification] = useState(null);
+
   // Guardar carrito en localStorage cuando cambie
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -36,6 +38,17 @@ export const CartProvider = ({ children }) => {
         return [...prevCart, { ...game, quantity: 1 }];
       }
     });
+
+    // Mostrar notificación
+    setNotification({
+      message: `"${game.title}" agregado al carrito`,
+      type: "success",
+    });
+
+    // Ocultar notificación después de 3 segundos
+    setTimeout(() => {
+      setNotification(null);
+    }, 3000);
   };
 
   const removeFromCart = (gameId) => {
@@ -75,6 +88,7 @@ export const CartProvider = ({ children }) => {
     clearCart,
     getCartTotal,
     getCartItemsCount,
+    notification,
   };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

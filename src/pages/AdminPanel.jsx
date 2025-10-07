@@ -84,6 +84,8 @@ const AdminPanel = () => {
 
   // Cargar juegos al montar el componente
   useEffect(() => {
+    // Scroll al inicio
+    window.scrollTo({ top: 0, behavior: "smooth" });
     loadGames();
   }, []);
 

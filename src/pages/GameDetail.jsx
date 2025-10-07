@@ -1,4 +1,5 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
+import { useEffect } from "react";
 import {
   FiShoppingCart,
   FiStar,
@@ -24,6 +25,11 @@ const GameDetail = () => {
 
   // Obtener todos los juegos para mostrar relacionados
   const { games: allGames } = useGames();
+
+  // Scroll al inicio cuando se carga la página o cambia el ID
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [id]);
 
   if (loading) {
     return (

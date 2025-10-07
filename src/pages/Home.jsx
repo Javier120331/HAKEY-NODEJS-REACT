@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import { FiArrowRight, FiTrendingUp } from "react-icons/fi";
 import GameCard from "../components/GameCard";
 import Loading from "../components/Loading";
 import ErrorMessage from "../components/ErrorMessage";
+import TextType from "../components/TextType";
 import { useGames } from "../hooks/useGames";
 import "./Home.css";
 
@@ -12,6 +14,11 @@ const Home = () => {
   const featuredGames = games.filter((game) => game.featured);
   const topDeals = games.filter((game) => game.discount > 20).slice(0, 4);
 
+  // Scroll al inicio cuando se monta el componente
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <div className="home">
       {/* Hero Section */}
@@ -20,7 +27,17 @@ const Home = () => {
           <div className="hero-content fade-in">
             <h1 className="hero-title">
               Descubre las Mejores
-              <span className="gradient-text"> Game Keys</span>
+              <br />
+              <TextType
+                text={["Game Keys", "Ofertas", "Aventuras"]}
+                as="span"
+                className="gradient-text"
+                typingSpeed={80}
+                deletingSpeed={50}
+                pauseDuration={2000}
+                cursorCharacter="|"
+                loop={true}
+              />
             </h1>
             <p className="hero-subtitle">
               Miles de juegos a los mejores precios. Activación instantánea. Tu

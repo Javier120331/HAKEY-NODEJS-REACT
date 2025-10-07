@@ -8,22 +8,18 @@ function Footer() {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3 className="footer-title">HAKEY</h3>
+            <h3 className="footer-title">
+              <a href="/">HAKEY</a>
+            </h3>
             <p className="footer-description">
               Tu tienda de confianza para adquirir las mejores game keys a los
               precios más competitivos del mercado.
             </p>
             <div className="social-links">
-              <a href="#" aria-label="Facebook">
-                <FiFacebook />
-              </a>
-              <a href="#" aria-label="Twitter">
-                <FiTwitter />
-              </a>
-              <a href="#" aria-label="Instagram">
-                <FiInstagram />
-              </a>
-              <a href="#" aria-label="GitHub">
+              <a
+                href="https://github.com/Javier120331/HAKEY-NODEJS-REACT"
+                aria-label="GitHub"
+              >
                 <FiGithub />
               </a>
             </div>
@@ -72,7 +68,9 @@ function Footer() {
                 <a href="#">FAQ</a>
               </li>
               <li>
-                <a href="#">Contacto</a>
+                <a href="https://github.com/Javier120331/HAKEY-NODEJS-REACT">
+                  Contacto
+                </a>
               </li>
               <li>
                 <a href="#">Política de Privacidad</a>

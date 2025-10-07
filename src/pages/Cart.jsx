@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import {
   FiTrash2,
   FiPlus,
@@ -12,6 +13,11 @@ import "./Cart.css";
 const Cart = () => {
   const { cart, removeFromCart, updateQuantity, getCartTotal, clearCart } =
     useCart();
+
+  // Scroll al inicio cuando se monta el componente
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   if (cart.length === 0) {
     return (
