@@ -42,7 +42,7 @@ export const CartProvider = ({ children }) => {
     // Mostrar notificación
     setNotification({
       message: `"${game.title}" agregado al carrito`,
-      type: 'success'
+      type: "success",
     });
 
     // Ocultar notificación después de 3 segundos
